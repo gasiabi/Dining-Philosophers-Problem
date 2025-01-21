@@ -1,25 +1,26 @@
-# Dining-Philosophers-Problem
-
 # Dining Philosophers Problem
 
-## Opis projektu
-Ten projekt implementuje rozwiązanie problemu filozofów przy stole w języku C z użyciem wątków i semaforów. Program ilustruje zarządzanie współdzielonymi zasobami (widełkami) oraz synchronizację wątków.
+## Project Description
 
-## Funkcjonalności
-1. Symulacja pięciu filozofów medytujących, jedzących oraz czekających na widelce.
-2. Synchronizacja wątków za pomocą:
-   - Semaforów (`sem_t`) dla widelców.
-   - Muteksu (`pthread_mutex_t`) dla operacji wejścia-wyjścia (zapobieganie nakładaniu się wypisywania przez wątki).
-3. Realizacja 7 cykli jedzenia dla każdego filozofa.
+This project implements a solution to the dining philosophers problem in C using threads and semaphores. The program illustrates managing shared resources (forks) and thread synchronization.
 
-## Struktura kodu
-- **Stany filozofów**:
-  - `m`: medytuje,
-  - `C`: czeka,
-  - `L`: bierze lewy widelec,
-  - `P`: bierze prawy widelec,
-  - `J`: je,
-  - `l`: odkłada lewy widelec,
-  - `p`: odkłada prawy widelec,
-  - `-`: kończy jedzenie.
-- Synchronizacja operacji na widelcach za pomocą semaforów.
+## Features
+
+1. Simulation of five philosophers meditating, eating, and waiting for forks.
+2. Thread synchronization using:
+   - **Semaphores (`sem_t`)** for forks.
+   - **Mutex (`pthread_mutex_t`)** for input/output operations (to prevent overlapping thread outputs).
+3. Execution of 7 eating cycles for each philosopher.
+
+## Code Structure
+
+- **Philosopher states**:
+  - `m`: meditating
+  - `C`: waiting
+  - `L`: picks up the left fork
+  - `P`: picks up the right fork
+  - `J`: eating
+  - `1`: puts down the left fork
+  - `2`: puts down the right fork
+  - `K`: finishes eating
+- Synchronization of fork operations using semaphores.
